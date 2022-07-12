@@ -1,0 +1,351 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+    font-family: 'Times New Roman',sans-serif;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* 以上リセットCSS */
+
+.common-inner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+.profile-title {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 100px;
+}
+
+.profile-img {
+    position: relative;
+    left: 20px;
+    width: 50%;
+    
+}
+.profile-img-inner {
+    position: absolute;
+    padding-top: 50%;
+    width: 50%;
+    z-index: 10;
+    animation: slideIn 1.5s ease;
+}
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.profile-img__img {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% + 20px);
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    border: 5px solid #ffffff;
+}
+.rectangle {
+    position: relative;
+    top: 0;
+    left: 20px;
+    padding-top: 50%;
+    width: 50%;
+    z-index: 1;
+}
+.bar {
+    content: '';
+    position: absolute;
+    top: 101px;
+    left: 50%;
+    height: 2px;
+    transform: rotate(45deg) translateX(-75px);
+    width: 400px;
+}
+.bar::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: #549769;
+    animation: grow 1.5s ease 1.5s forwards;
+
+}
+@keyframes grow {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 400px;
+    }
+}
+.rectangle::after {
+    content: '';
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #549769;
+    transform: rotate(45deg);
+    border-top: 2px solid #549769;
+}
+
+.profile-des {
+    position: relative;
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.profile-des::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    background-color: #549769;
+    animation: grow-h 1.5s ease 1.8s forwards;
+}
+@keyframes grow-h {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 100%;
+    }
+}
+.profile-des::after {
+    content: 'Creator';
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: clamp(40px, 10vw, 80px);
+    color: #d6e0da;
+    z-index: -1;
+    animation: fade 1.5s ease 3s forwards;
+    opacity: 0;
+    
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.profile-des__title {
+    font-size: 23px;
+    line-height: 1.48;
+    margin-bottom: 30px;
+    color: #3c3c3c;
+    font-weight: 600;
+    animation: slideIn 1.5s ease 3.5s forwards;
+    opacity: 0;
+}
+
+.profile-des-name {
+    line-height: 1.5;
+    font-weight: 500;
+    color: #3c3c3c;
+    width: max-content;
+    padding-left: 10%;
+    animation: fade 1s ease 3.7s forwards;
+    opacity: 0;
+}
+.profile-des-name__name {
+    font-size: 32px;
+}
+.profile-des-name__name-jp {
+    font-size: 10px;
+    text-align: right;
+
+}
+
+@media screen and (max-width: 600px) {
+    .profile-title {
+        align-items: center;
+    }
+    .profile-img {
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile-img-inner {
+        box-sizing: border-box;
+        padding-top: 90%;
+        width: 75%;
+    }
+    .profile-img__img {
+        width: 90%;
+        height: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        object-fit: cover;
+    }
+    .rectangle {
+        padding-top: 100%;
+        width: 100%;
+        left: 0;
+    }
+    .rectangle::after {
+        top: 0;
+        left: -50%;
+    }
+    .profile-des {
+        padding-right: 15px;
+    }
+    .profile-des-name {
+        text-align: right;
+        width: auto;
+    }
+    .profile-des-name__name {
+        font-size: 23px;
+    }
+    .profile-des-name__name-jp {
+        font-size: 10px;
+    }
+    .profile-des::after {
+        width: max-content;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: clamp(60px, 10vw, 100px);
+    }
+    .rectangle::before {
+        top: 60%;
+        left: 0;
+        width: 190%;
+        transform: rotate(45deg) translateX(-25%);
+
+    }
+    .bar {
+        content: '';
+        position: absolute;
+        top: 60%;
+        left: 0;
+        width: 190%;
+        transform: rotate(45deg) translateX(-25%);
+        height: 2px;
+    }
+    .bar::before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 0px;
+        background-color: #549769;
+        animation: grow 1.5s ease 1.5s forwards;
+    
+    }
+    @keyframes grow {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+}
